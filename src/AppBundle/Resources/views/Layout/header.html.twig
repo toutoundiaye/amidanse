@@ -1,0 +1,25 @@
+<header>
+    <div class="row" id="homepageHeader">
+        <div class="col-sm-2" id="logo">
+            <img src="{{ asset('bundles/app/img/logo.jpg') }}" class="img-circle" />
+        </div>
+        <div class="col-sm-8" id="titleHomepage">Ami'Danse</div>
+        <div class="col-sm-2" id="buttonConnexion">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %} 
+            	{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                <br/>
+                <a class="btn btn-primary" href="{{ path('fos_user_security_logout') }}">
+                	<span class="glyphicon glyphicon-log-out"></span>
+                    	{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+                <a class="btn btn-primary" href="{{ path('fos_user_profile_show') }}">Profile</a> 
+            {% else %}
+            	<a class="btn btn-primary" href="{{ path('fos_user_security_login') }}">
+            		<span class="glyphicon glyphicon-log-in"></span>{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                </a>
+
+            {% endif %}
+        </div> 
+    </div> 
+    	{% include ('AppBundle:Layout:navbar.html.twig') %}
+</header>              

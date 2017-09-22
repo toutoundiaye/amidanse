@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Ami'Danse{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        {% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('bundles/app/img/favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+            <div id="container">
+                {# Header #} 
+                {% block header %} {% include "AppBundle:Layout:header.html.twig" %} {% endblock %}
+        
+                <main>
+                    {# Content #} 
+                    {% block content %} {% endblock %}
+                </main>
+
+                {# Footer #} 
+                {% block footer %} {% include "AppBundle:Layout:footer.html.twig" %} {% endblock %} 
+            </div>   
+        {% endblock body %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% block javascripts %}
+           
+        {% endblock %}
+    </body>
+</html>
