@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2017-09-22T18:47:29Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="1a73af9e7ae00182733b2292511b814be66f065f" resname="contact">
+        <source>contact</source>
+        <target>Contact</target>
+        <jms:reference-file line="11">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b45e3040c2a8887b54d4c6d80916fc43f3d5041a" resname="danceStyle">
+        <source>danceStyle</source>
+        <target>Styles de Danse</target>
+        <jms:reference-file line="7">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="43348291e9a5890470b8f761002658dd04f6486b" resname="diary">
+        <source>diary</source>
+        <target>Agenda</target>
+        <jms:reference-file line="8">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="732d18e71a6837417bb852aed581cf2f89d58dbe" resname="forum">
+        <source>forum</source>
+        <target>Forum</target>
+        <jms:reference-file line="10">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6e3d361fd1e69215e81760b408f078c0d718f508" resname="label.homepage">
+        <source>label.homepage</source>
+        <target>Accueil</target>
+        <jms:reference-file line="6">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b0df6a8b9a96c11afe74894b9f0263c4e8c16c0" resname="registration">
+        <source>registration</source>
+        <target>Inscription</target>
+        <jms:reference-file line="9">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

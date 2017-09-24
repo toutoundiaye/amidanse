@@ -1,0 +1,11 @@
+jms_translation:
+    configs:
+        app:
+            dirs: ['%kernel.root_dir%', '%kernel.root_dir%/../src']
+            output_dir: '%kernel.root_dir%/Resources/translations'
+            excluded_names: ["*TestCase.php", "*Test.php", "TaskType.php"]
+            ignored_domains: ["FOSUserBundle"]
+            excluded_dirs:
+              - cache
+              - data
+              - logs
