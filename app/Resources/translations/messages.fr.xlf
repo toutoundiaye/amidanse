@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-09-25T23:39:59Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2017-10-02T13:49:09Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
+      <trans-unit id="25f474c05ed910ead2bc9034165859e9786e4725" resname="connexionPage.message">
+        <source>connexionPage.message</source>
+        <target>Je me connecte pour accéder à mon profil</target>
+        <jms:reference-file line="9">/Resources/FOSUserBundle/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="1a73af9e7ae00182733b2292511b814be66f065f" resname="contact">
         <source>contact</source>
         <target>Contact</target>
