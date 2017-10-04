@@ -7,6 +7,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -16,13 +17,13 @@ class User extends BaseUser
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="id" type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="surname" type="string")
      * @Assert\NotBlank(message="Please enter your surname.", groups={"Registration", "Profile"})
      * @Assert\Length(
      *     min=2,
@@ -35,7 +36,7 @@ class User extends BaseUser
     protected $surname;
      
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="name" type="string")
      * @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
      * @Assert\Length(
      *     min=3,
@@ -46,15 +47,48 @@ class User extends BaseUser
      * )
      */
     protected $name;
-
+    
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="gender" type="string")
      */
     protected $gender;
+
+    /**
+     * @ORM\Column(name="adherent" type="boolean")
+     */
+    protected $adherent;
+
+    /**
+     * @var Comments[] | ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="user")
+     */
+    protected $posts;
+
+   /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Customer\DanceCategory", inversedBy="users")
+     * @ORM\JoinTable(name="dancer")
+     */
+    private $danceCategories;
+
+    /**
+     * @var string
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Lesson", mappedBy="users")
+     */
+    protected $lessons;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\StyleCategory", mappedBy="potentialTrainers")
+     */
+    protected $styleCategories;
 
     public function __construct()
     {
         parent::__construct();
+        $this->posts = new ArrayCollection();
+        $this->danceCategories = new ArrayCollection();
+        $this->lessons = new ArrayCollection();
+        $this->styleCategories = new ArrayCollection();
     }
 
     /**
@@ -127,5 +161,97 @@ class User extends BaseUser
     public function getGender()
     {
         return $this->gender;
+    }
+
+    /**
+     *
+     * @return boolean
+     */
+    public function isAdherent()
+    {
+        return $this->adherent;
+    }
+
+    /**
+     * Set adherent
+     *
+     * @param boolean $adherent
+     *
+     * @return User
+     */
+    public function setAdherent($adherent)
+    {
+        $this->adherent = $adherent;
+
+        return $this;
+    }
+
+    /**
+     * @return Comments[]
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * @param Comments $post
+     *
+     * @return $this
+     */
+    public function addPost(Comment $post)
+    {
+        $this->comments->add($post);
+        $post->setUser($this);
+
+        return $this;
+    }
+
+    /**
+     * @param Comment $post
+     *
+     * @return $this
+     */
+    public function removePost(Comment $post)
+    {
+        $this->comments->removeElement($post);
+        $post->setUser(null);
+
+        return $this;
+    }
+
+    /**
+     * @return DanceCategories[]
+     */
+    public function getDanceCategories()
+    {
+        return $this->danceCategories;
+    }
+
+    /**
+     * @param StyleCategory $styleCategory
+     *
+     * @return $this
+     */
+    public function addStyleCategory(StyleCategory $styleCategory)
+    {
+        $this->styleCategories->add($styleCategory);
+        $styleCategory->setUser($this);
+
+        return $this;
+    }
+
+    /**
+     * @param StyleCategory $styleCategory
+     *œ
+     *
+     * @return $this
+     */
+    public function removeStyleCategory(StyleCategory $styleCategory)
+    {
+        $this->styleCategories->removeElement($styleCategory);
+        $styleCategory->setUser(null);
+
+        return $this;
     }
 }

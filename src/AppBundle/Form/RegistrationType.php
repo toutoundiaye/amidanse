@@ -22,13 +22,21 @@ class RegistrationType extends AbstractType
                 'required' => true,
                 'label' => 'surname.label',
             ])
-            ->add('gender', ChoiceType::class, array(
+            ->add('gender', ChoiceType::class, [
                 'choices' => array(
                     'm'=>'Man',
                     "f"=>'Woman',
                 ),
-                'label'=>'gender.label')
-            );
+                'label'=>'gender.label'
+            ])
+            ->add('adherent', ChoiceType::class, [
+                'choices' => array(
+                    'yes'=>'adherent',
+                    "non"=>'not adherent',
+                ),
+                'label'=>'adherent.label'
+            ]);
+
     }
 
     public function getParent()
