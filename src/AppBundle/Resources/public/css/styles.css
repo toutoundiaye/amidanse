@@ -1,5 +1,5 @@
 body {
-	background-color: yellow;
+	background-color: #FADD17;
 }
 
 #homepageHeader {
@@ -16,6 +16,13 @@ body {
 	color: #8A0507;
 	text-align: center;
 }
+.btn-primary {
+	background-color: #8A0507;
+	border-color: #8A0507;
+	a:hover { 
+		background-color: #8A0507; 
+	}
+}
 
 #navbar {
 	background-color: #8A0507;
@@ -25,7 +32,7 @@ body {
 }
 
 .navbar-default .navbar-brand {
-	color: black;
+	color: white;
 }
 
 #footer {
@@ -33,4 +40,18 @@ body {
 	border-color: #8A0507;
 	margin-left: 5px;
 	margin-right: 5px;
+}
+
+.jumbotron {
+	text-align: center;
+}	
+
+.text-section {
+	font-size: 18px;
+	text-align: center;
+}
+
+.registration {
+	margin-left: 25%;
+	margin-right: 25%;
 }

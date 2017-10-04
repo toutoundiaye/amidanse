@@ -14,8 +14,7 @@ class HomePageController extends Controller
      */
     public function homepageAction(Request $request)
     {
-        return $this->render('base.html.twig',[]);
-        //return new Response('whats up darling?');
+        return $this->render('AppBundle:HomePage:homePage.html.twig',[]);
     }
 
 }
