@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-10-02T13:49:09Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2017-10-02T18:31:50Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -27,11 +27,21 @@
         <target>Agenda</target>
         <jms:reference-file line="8">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="4a0a19218e082a343a1b17e5333409af9d98f0f5" resname="f">
+        <source>f</source>
+        <target>f</target>
+        <jms:reference-file line="27">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
+      </trans-unit>
       <trans-unit id="732d18e71a6837417bb852aed581cf2f89d58dbe" resname="forum">
         <source>forum</source>
         <target>Forum</target>
         <jms:reference-file line="9">/../src/AppBundle/Resources/views/Layout/footer.html.twig</jms:reference-file>
         <jms:reference-file line="10">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="521d58677d7818f4a7191ab8ed3c5ef857685991" resname="gender.label">
+        <source>gender.label</source>
+        <target state="new">gender.label</target>
+        <jms:reference-file line="29">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="568be0fa2023d1a447e7bd150dda7068ece26898" resname="homepage">
         <source>homepage</source>
@@ -44,15 +54,30 @@
         <target>Mentions légales</target>
         <jms:reference-file line="7">/../src/AppBundle/Resources/views/Layout/footer.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="6b0d31c0d563223024da45691584643ac78c96e8" resname="m">
+        <source>m</source>
+        <target>m</target>
+        <jms:reference-file line="26">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
+      </trans-unit>
       <trans-unit id="127236dfd3660dd20cf5c9cc8cc62bf24fa5399d" resname="mapSite">
         <source>mapSite</source>
         <target>Plan du site</target>
         <jms:reference-file line="8">/../src/AppBundle/Resources/views/Layout/footer.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="8913bb9ab32e82b7dace33343f506f1fea38193d" resname="name.label">
+        <source>name.label</source>
+        <target state="new">name.label</target>
+        <jms:reference-file line="18">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
+      </trans-unit>
       <trans-unit id="5b0df6a8b9a96c11afe74894b9f0263c4e8c16c0" resname="registration">
         <source>registration</source>
         <target>Inscription</target>
         <jms:reference-file line="9">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8df0991dda6a5156fc09ab1b822d2fa90eccc805" resname="surname.label">
+        <source>surname.label</source>
+        <target state="new">surname.label</target>
+        <jms:reference-file line="22">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="353f1e9e1db92a059508deab73f1befeeb06f98a" resname="whoWeAre">
         <source>whoWeAre</source>
