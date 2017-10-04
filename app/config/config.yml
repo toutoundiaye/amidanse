@@ -70,7 +70,10 @@ fos_user:
     user_class: AppBundle\Entity\User
     from_email:
         address: "thiesescale@yahoo.fr"
-        sender_name: "tinajoli"
+        sender_name: "amidanse"
+    registration:
+        form:
+            type: AppBundle\Form\RegistrationType
 
 # Doctrinemigrations Configuration
 doctrine_migrations:

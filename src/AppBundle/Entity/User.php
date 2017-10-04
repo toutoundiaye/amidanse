@@ -23,18 +23,34 @@ class User extends BaseUser
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Please enter your surname.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=2,
+     *     max=255,
+     *     minMessage="The surname is too short.",
+     *     maxMessage="The surname is too long.",
+     *     groups={"Registration", "Profile"}
+     * )
      */
     protected $surname;
      
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=3,
+     *     max=255,
+     *     minMessage="The name is too short.",
+     *     maxMessage="The name is too long.",
+     *     groups={"Registration", "Profile"}
+     * )
      */
     protected $name;
 
     /**
      * @ORM\Column(type="string")
      */
-    protected $sex;
+    protected $gender;
 
     public function __construct()
     {
@@ -90,26 +106,26 @@ class User extends BaseUser
     }
 
     /**
-     * Set sex
+     * Set gender
      *
-     * @param string $sex
+     * @param string $gender
      *
      * @return User
      */
-    public function setSex($sex)
+    public function setGender($gender)
     {
-        $this->sex = $sex;
+        $this->gender = $gender;
 
         return $this;
     }
 
     /**
-     * Get sex
+     * Get gender
      *
      * @return string
      */
-    public function getSex()
+    public function getGender()
     {
-        return $this->sex;
+        return $this->gender;
     }
 }
