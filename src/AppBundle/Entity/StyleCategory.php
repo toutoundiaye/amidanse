@@ -24,9 +24,9 @@ class StyleCategory
     /**
      * @var DanceStyle[]
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\StyleDance", inversedBy="styleCategories")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\DanceStyle", inversedBy="styleCategories")
      */
-    protected $DanceStyle;
+    protected $danceStyle;
 
     /**
      * @var DanceCategory[]
@@ -55,13 +55,13 @@ class StyleCategory
     /**
      * Set danceStyle
      *
-     * @param \AppBundle\Entity\StyleDance $danceStyle
+     * @param \AppBundle\Entity\DanceStyle $danceStyle
      *
      * @return StyleCategory
      */
-    public function setDanceStyle(\AppBundle\Entity\StyleDance $danceStyle = null)
+    public function setDanceStyle(\AppBundle\Entity\DanceStyle $danceStyle = null)
     {
-        $this->DanceStyle = $danceStyle;
+        $this->danceStyle = $danceStyle;
 
         return $this;
     }
@@ -69,11 +69,11 @@ class StyleCategory
     /**
      * Get danceStyle
      *
-     * @return \AppBundle\Entity\StyleDance
+     * @return \AppBundle\Entity\DanceStyle
      */
     public function getDanceStyle()
     {
-        return $this->DanceStyle;
+        return $this->danceStyle;
     }
 
     /**

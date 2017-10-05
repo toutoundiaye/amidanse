@@ -17,13 +17,13 @@ class User extends BaseUser
 {
     /**
      * @ORM\Id
-     * @ORM\Column(name="id" type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
     /**
-     * @ORM\Column(name="surname" type="string")
+     * @ORM\Column(name="surname", type="string")
      * @Assert\NotBlank(message="Please enter your surname.", groups={"Registration", "Profile"})
      * @Assert\Length(
      *     min=2,
@@ -36,7 +36,7 @@ class User extends BaseUser
     protected $surname;
      
     /**
-     * @ORM\Column(name="name" type="string")
+     * @ORM\Column(name="name", type="string")
      * @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
      * @Assert\Length(
      *     min=3,
@@ -49,12 +49,12 @@ class User extends BaseUser
     protected $name;
     
     /**
-     * @ORM\Column(name="gender" type="string")
+     * @ORM\Column(name="gender", type="string")
      */
     protected $gender;
 
     /**
-     * @ORM\Column(name="adherent" type="boolean")
+     * @ORM\Column(name="adherent", type="boolean")
      */
     protected $adherent;
 
@@ -65,8 +65,7 @@ class User extends BaseUser
     protected $posts;
 
    /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Customer\DanceCategory", inversedBy="users")
-     * @ORM\JoinTable(name="dancer")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\DanceCategory", inversedBy="users")
      */
     private $danceCategories;
 

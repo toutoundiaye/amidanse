@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Entity\User;
 
 /**
  * Lesson
@@ -90,12 +91,13 @@ class Lesson
     private $trainers;
 
     /**
-    * @ManyToOne(targetEntity="AppBundle\Entity\User")
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+    * @ORM\JoinColumn(name="referent", referencedColumnName="id")
     */
     private $referent;
 
     /** 
-    * @ManyToOne(targetEntity="AppBundle\Entity\Event")
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Event")
     */
     private $event;
 
@@ -328,7 +330,7 @@ class Lesson
     }
 
     /**
-     * @param Users $dancer
+     * @param User $dancer
      *
      * @return $this
      */
@@ -341,11 +343,11 @@ class Lesson
     }
     
     /**
-     * @param Users $dancer
+     * @param User $dancer
      *
      * @return $this
      */
-    public function removeDancer(Users $dancer)
+    public function removeDancer(User $dancer)
     {
         $this->dancers->removeElement($dancer);
         $dancer->setLesson(null);
@@ -375,11 +377,11 @@ class Lesson
     }
     
     /**
-     * @param Users $trainer
+     * @param User $trainer
      *
      * @return $this
      */
-    public function removeTrainer(Users $trainer)
+    public function removeTrainer(User $trainer)
     {
         $this->trainers->removeElement($trainer);
         $trainer->setLesson(null);
