@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-10-02T18:36:06Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2017-10-05T22:55:41Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -29,6 +29,11 @@
       <trans-unit id="92e84e301fe7e3626ce788b31826aad68349f331" resname="The surname is too short.">
         <source>The surname is too short.</source>
         <target>The surname is too short.</target>
+      </trans-unit>
+      <trans-unit id="3bedd11b50e9e9f2d75a0dcdcf6b6f42f6221cc3" resname="adherent.label">
+        <source>adherent.label</source>
+        <target>Adherent</target>
+        <jms:reference-file line="37">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="4a0a19218e082a343a1b17e5333409af9d98f0f5" resname="f">
         <source>f</source>
@@ -94,10 +99,20 @@
         <target>Prénom</target>
         <jms:reference-file line="19">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
       </trans-unit>
+      <trans-unit id="fd1286353570c5703799ba76999323b7c7447b06" resname="no">
+        <source>no</source>
+        <target>non</target>
+        <jms:reference-file line="35">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
+      </trans-unit>
       <trans-unit id="8df0991dda6a5156fc09ab1b822d2fa90eccc805" resname="surname.label">
         <source>surname.label</source>
         <target>Nom</target>
         <jms:reference-file line="23">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb360f9c09ac8c5edb2f18be5de4e80ea4c430d0" resname="yes">
+        <source>yes</source>
+        <target>oui</target>
+        <jms:reference-file line="34">/../src/AppBundle/Form/RegistrationType.php</jms:reference-file>
       </trans-unit>
     </body>
   </file>

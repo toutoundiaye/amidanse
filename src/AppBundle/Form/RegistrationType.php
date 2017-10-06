@@ -32,7 +32,7 @@ class RegistrationType extends AbstractType
             ->add('adherent', ChoiceType::class, [
                 'choices' => array(
                     'yes'=>'adherent',
-                    "non"=>'not adherent',
+                    "no"=>'not adherent',
                 ),
                 'label'=>'adherent.label'
             ]);
