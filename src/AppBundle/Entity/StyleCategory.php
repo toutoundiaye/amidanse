@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * StyleCategory
@@ -41,6 +42,11 @@ class StyleCategory
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="styleCategories")
      */
     protected $potentialTrainers;
+    
+    public function __construct()
+    {
+        $this->potentialTrainers = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -101,20 +107,6 @@ class StyleCategory
     }
 
     /**
-     * Set potentialTrainers
-     *
-     * @param \AppBundle\Entity\User $potentialTrainers
-     *
-     * @return StyleCategory
-     */
-    public function setPotentialTrainers(\AppBundle\Entity\User $potentialTrainers = null)
-    {
-        $this->potentialTrainers = $potentialTrainers;
-
-        return $this;
-    }
-
-    /**
      * Get potentialTrainers
      *
      * @return \AppBundle\Entity\User
@@ -123,4 +115,31 @@ class StyleCategory
     {
         return $this->potentialTrainers;
     }
+
+    /**
+     * @param User $potentialTrainer
+     *
+     * @return $this
+     */
+    public function addPotentialTrainer(User $potentialTrainer)
+    {
+        $this->potentialTrainers->add($potentialTrainer);
+        $potentialTrainer->setStyleCategory($this);
+
+        return $this;
+    }
+    
+    /**
+     * @param User $potentialTrainer
+     *
+     * @return $this
+     */
+    public function removePotentialTrainer(User $potentialTrainer)
+    {
+        $this->potentialTrainers->removeElement($potentialTrainer);
+        $potentialTrainer->setStyleCategory(null);
+
+        return $this;
+    }
+
 }
