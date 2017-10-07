@@ -1,0 +1,6 @@
+easy_admin:
+    translation_domain: 'messages'
+    entities:
+        DanceStyle:
+            class: AppBundle\Entity\DanceStyle
+            label: app.menu.danceStyle

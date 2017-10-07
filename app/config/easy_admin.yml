@@ -1,0 +1,13 @@
+imports:
+    - { resource: easy_admin_entities/danceStyle.yml }
+
+easy_admin:
+    design:
+        brand_color: '#8A0507'
+        assets:
+            favicon: 'bundles/app/img/favicon.ico'
+    site_name: 'Ami''danse'
+    list:
+        actions:
+            - { name: 'edit', label: '', css_class: 'btn btn-warning', icon: 'edit' }
+            - { name: 'delete', label: '', css_class: 'btn btn-danger', icon: 'trash' }
