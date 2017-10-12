@@ -9,3 +9,4 @@ jms_translation:
               - cache
               - data
               - logs
+              - EasyAdminBundle

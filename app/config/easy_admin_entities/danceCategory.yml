@@ -1,0 +1,15 @@
+easy_admin:
+    translation_domain: 'messages'
+    entities:
+        danceCategory:
+            class: AppBundle\Entity\DanceCategory
+            label: app.menu.danceCategory
+            form: 
+                fields:
+                    - { property: 'name', type: 'text', label: 'admin.danceCategory.name', type_options: { required: true } }
+                    - { property: 'description', type: 'textarea', label: 'admin.danceCategory.description', type_options: { required: false } }
+                    - { property: 'danceStyle', label: 'admin.danceCategory.danceStyle', type_options: { required: true } }
+            new:
+                title: 'admin.danceCategory.new'
+            edit:
+                title: 'admin.danceCategory.edit'

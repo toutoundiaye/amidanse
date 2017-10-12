@@ -1,5 +1,6 @@
 imports:
     - { resource: easy_admin_entities/danceStyle.yml }
+    - { resource: easy_admin_entities/danceCategory.yml }
 
 easy_admin:
     design:
