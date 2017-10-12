@@ -15,6 +15,20 @@
 	                <img src="{{ asset('bundles/app/img/danse-9.jpg') }}" alt="ami-danse-9" class="img-thumbnail">#}
 	            </div>
 	        </div>
+	        <div class="col-md-9" >
+	        	<div class="col-md-3" id="listDanceStyle">
+	        		{% for danceStyle in danceStyles %}
+	        			{{danceStyle.name}}
+	        			<ul id="listDanceCategory">
+	        				{% for danceCategory in danceStyle.danceCategories %}
+	        					<li>
+	        						{{danceCategory.name}}
+	        					</li>
+	        				{% endfor %}	
+	        			</ul>	
+	        		{% endfor %}
+	        	</div>	
+	        </div>
 	    </div> 
 	</div>       
 	<script src="{{ asset('bundles/app/js/slider.js') }}"></script>
