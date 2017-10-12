@@ -54,7 +54,7 @@ class User extends BaseUser
     protected $gender;
 
     /**
-     * @ORM\Column(name="adherent", type="boolean")
+     * @ORM\Column(name="adherent", type="string")
      */
     protected $adherent;
 
@@ -164,9 +164,9 @@ class User extends BaseUser
 
     /**
      *
-     * @return boolean
+     * @return string
      */
-    public function isAdherent()
+    public function getAdherent()
     {
         return $this->adherent;
     }

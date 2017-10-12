@@ -41,12 +41,22 @@ class DanceCategory
      */
     protected $styleCategories;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\DanceStyle", inversedBy="danceCategories")
+     */
+    protected $danceStyle;
+
 
     public function __construct()
     {
         $this->styleCategories = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+    
     /**
      * Get id
      *
@@ -114,6 +124,16 @@ class DanceCategory
     }
 
     /**
+     * Get styleCategories
+     *
+     * @return string
+     */
+    public function getStyleCategories()
+    {
+        return $this->styleCategories;
+    }
+    
+    /**
      * @param StyleCategory $styleCategory
      *
      * @return $this
@@ -136,6 +156,30 @@ class DanceCategory
     {
         $this->styleCategories->removeElement($styleCategory);
         $styleCategory->setDanceCategory(null);
+
+        return $this;
+    }
+
+    /**
+     * Get danceStyle
+     *
+     * @return string
+     */
+    public function getDanceStyle()
+    {
+        return $this->danceStyle;
+    }
+
+    /**
+     * Set danceStyle
+     *
+     * @param string $danceStyle
+     *
+     * @return DanceCategory
+     */
+    public function setDanceStyle(DanceStyle $danceStyle)
+    {
+        $this->danceStyle = $danceStyle;
 
         return $this;
     }

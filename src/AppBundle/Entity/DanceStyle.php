@@ -41,10 +41,20 @@ class DanceStyle
      */
     protected $styleCategories;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\DanceCategory", mappedBy="danceStyle")
+     */
+    protected $danceCategories;
 
     public function __construct()
     {
         $this->styleCategories = new ArrayCollection();
+        $this->danceCategories = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
     /**
      * Get id
@@ -105,6 +115,16 @@ class DanceStyle
     }
 
     /**
+     * Get styleCategories
+     *
+     * @return string
+     */
+    public function getStyleCategories()
+    {
+        return $this->styleCategories;
+    }
+    
+    /**
      * @param StyleCategory $styleCategory
      *
      * @return $this
@@ -127,6 +147,43 @@ class DanceStyle
     {
         $this->styleCategories->removeElement($styleCategory);
         $styleCategory->setDanceStyle(null);
+
+        return $this;
+    }
+
+    /**
+     * Get danceCategories
+     *
+     * @return string
+     */
+    public function getDanceCategories()
+    {
+        return $this->danceCategories;
+    }
+    
+    /**
+     * @param DanceCategory $danceCategory
+     *
+     * @return $this
+     */
+    public function addDanceCategory(DanceCategory $danceCategory)
+    {
+        $this->danceCategories->add($danceCategory);
+        $danceCategory->setDanceStyle($this);
+
+        return $this;
+    }
+
+    /**
+     * @param DanceCategory $danceCategory
+     *œ
+     *
+     * @return $this
+     */
+    public function removeDanceCategory(DanceCategory $danceCategory)
+    {
+        $this->danceCategories->removeElement($danceCategory);
+        $danceCategory->setDanceStyle(null);
 
         return $this;
     }
