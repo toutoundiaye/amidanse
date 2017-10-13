@@ -3,15 +3,22 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Event
  *
  * @ORM\Table(name="event")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\EventRepository")
+ * @Vich\Uploadable
  */
 class Event
 {
+    use TimestampableEntity;
+
     /**
      * @var int
      *
@@ -29,14 +36,14 @@ class Event
     private $name;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="begingAt", type="datetime")
+     * @ORM\Column(name="begingAt", type="date")
      */
     private $begingAt;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
      * @ORM\Column(name="endAt", type="date")
      */
@@ -63,6 +70,11 @@ class Event
      */
     private $picture;
 
+    /**
+     * @Vich\UploadableField(mapping="event_pictures", fileNameProperty="picture")
+     * @var File
+     */
+    private $imageFile;
 
     /**
      * Get id
@@ -216,6 +228,20 @@ class Event
     public function getPicture()
     {
         return $this->picture;
+    }
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 }
 

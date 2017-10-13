@@ -1,0 +1,19 @@
+easy_admin:
+    entities:
+        Event:
+            class: AppBundle\Entity\Event
+            label: app.menu.event
+            form:
+                fields:
+                    - { property: 'name', type: 'text', label: 'admin.event.name', type_options: { required: true } }
+                    - { property: 'place', type: 'text', label: 'admin.event.place', type_options: { required: true } }
+                    - { property: 'description', type: 'textarea', label: 'admin.event.description', type_options: { required: false } }
+                    - { property: 'begingAt', type: 'date', label: 'admin.event.begingAt', type_options: { required: true } }
+                    - { property: 'endAt', type: 'date', label: 'admin.event.endAt', type_options: { required: true } }
+                    - { property: 'imageFile', type: 'vich_image', type_options: { required: false } }
+            list:
+                fields:
+                    - { property: 'name'}
+                    - { property: 'picture', type: 'image', base_path: %app.path.event_pictures% }
+                    - { property: 'begingAt'}
+                    - { property: 'endAt'}
