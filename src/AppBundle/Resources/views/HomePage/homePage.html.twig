@@ -4,18 +4,18 @@
 	    <div class="row">
 	        <div class="col-md-8">
 	            <div id="slider">
-	                <img src="{{ asset('bundles/app/img/danse-5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
-	                <img src="{{ asset('bundles/app/img/danse-5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
+	                <img src="{{ asset('bundles/app/img/danse5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
+	                <img src="{{ asset('bundles/app/img/danse5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
 	                {# <img src="{{ asset('bundles/app/img/danse-2.jpg') }}" alt="ami-danse-2" class="img-thumbnail"> #}
-	                <img src="{{ asset('bundles/app/img/danse-5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
-	                <img src="{{ asset('bundles/app/img/danse-5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
+	                <img src="{{ asset('bundles/app/img/danse5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
+	                <img src="{{ asset('bundles/app/img/danse5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
 	                {# <img src="{{ asset('bundles/app/img/danse-6.jpg') }}" alt="ami-danse-6" class="img-thumbnail">
 	                <img src="{{ asset('bundles/app/img/danse-7.jpg') }}" alt="ami-danse-7" class="img-thumbnail">
 	                <img src="{{ asset('bundles/app/img/danse-8.jpg') }}" alt="ami-danse-8" class="img-thumbnail">
 	                <img src="{{ asset('bundles/app/img/danse-9.jpg') }}" alt="ami-danse-9" class="img-thumbnail">#}
 	            </div>
 	        </div>
-	        <div class="col-md-9" >
+	        <div class="col-md-8" >
 	        	<div class="col-md-3" id="listDanceStyle">
 	        		{% for danceStyle in danceStyles %}
 	        			{{danceStyle.name}}
@@ -29,6 +29,13 @@
 	        		{% endfor %}
 	        	</div>	
 	        </div>
+	        <div class="col-md-4" id="listevent">
+	        	{% for event in events %}
+	        			{{event.name}}
+	        			<img src="{{ asset('bundles/app/img/danse9.jpeg') }}" alt="ami-danse-9" class="img-thumbnail">
+	        			{{event.description}}
+	            {% endfor %}			
+	        </div>	
 	    </div> 
 	</div>       
 	<script src="{{ asset('bundles/app/js/slider.js') }}"></script>
