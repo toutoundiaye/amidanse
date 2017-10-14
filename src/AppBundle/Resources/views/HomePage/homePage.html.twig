@@ -1,42 +1,44 @@
 {% extends '::base.html.twig' %}
+
 {% block content %}
 	<div class="HomeContent">
 	    <div class="row">
 	        <div class="col-md-8">
-	            <div id="slider">
-	                <img src="{{ asset('bundles/app/img/danse5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
-	                <img src="{{ asset('bundles/app/img/danse5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
-	                {# <img src="{{ asset('bundles/app/img/danse-2.jpg') }}" alt="ami-danse-2" class="img-thumbnail"> #}
-	                <img src="{{ asset('bundles/app/img/danse5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
-	                <img src="{{ asset('bundles/app/img/danse5.jpg') }}" alt="ami-danse-5" class="img-thumbnail">
-	                {# <img src="{{ asset('bundles/app/img/danse-6.jpg') }}" alt="ami-danse-6" class="img-thumbnail">
-	                <img src="{{ asset('bundles/app/img/danse-7.jpg') }}" alt="ami-danse-7" class="img-thumbnail">
-	                <img src="{{ asset('bundles/app/img/danse-8.jpg') }}" alt="ami-danse-8" class="img-thumbnail">
-	                <img src="{{ asset('bundles/app/img/danse-9.jpg') }}" alt="ami-danse-9" class="img-thumbnail">#}
-	            </div>
+	            <div id="slider"></div>
+	            <script src="/bundles/app/js/velocity.min.js"></script>
+	            <script src="{{ asset('bundles/app/js/slider.js') }}"></script>
 	        </div>
-	        <div class="col-md-8" >
-	        	<div class="col-md-3" id="listDanceStyle">
-	        		{% for danceStyle in danceStyles %}
-	        			{{danceStyle.name}}
-	        			<ul id="listDanceCategory">
-	        				{% for danceCategory in danceStyle.danceCategories %}
-	        					<li>
-	        						{{danceCategory.name}}
-	        					</li>
-	        				{% endfor %}	
-	        			</ul>	
-	        		{% endfor %}
-	        	</div>	
-	        </div>
-	        <div class="col-md-4" id="listevent">
-	        	{% for event in events %}
-	        			{{event.name}}
-	        			<img src="{{ asset('bundles/app/img/danse9.jpeg') }}" alt="ami-danse-9" class="img-thumbnail">
-	        			{{event.description}}
-	            {% endfor %}			
-	        </div>	
-	    </div> 
-	</div>       
-	<script src="{{ asset('bundles/app/js/slider.js') }}"></script>
+	        <aside class="col-md-4">
+	        	{% include('AppBundle:Layout:aside.html.twig') %}
+	        </aside>			
+	        <div class="col-md-8" id="listDanceStyleHomepage">
+        		{% set number = 0 %}
+        		{% for danceStyle in danceStyles %}
+	        		{% set number = number+1 %}	
+	        		<div class="col-md-4">	
+	        			{% if 0 == number %3 %}
+	                    	<div class="listDanceStyle tomato">
+	                    {% elseif 1 == number %3 %}
+	                    	<div class="listDanceStyle firebrick">
+	                    {% elseif 2 == number %3 %}
+	                        <div class="listDanceStyle orange">
+	                    {% endif %}
+		        	        <h3> {{danceStyle.name}}</h3> 
+		        				<ul class="listDanceCategory">
+			        				{% for danceCategory in danceStyle.danceCategories %}
+			        					<li>
+			        						<a href="#">{{danceCategory.name}}</a>
+			        					</li>
+			        				{% endfor %}	
+			        			</ul>
+		        	        </div>
+		                    </div>			
+	        	{% endfor %}
+	                        </div>	   
+	                </div> 
+	        </div> 
+	    </div>  
+	</div>      
 {% endblock %}
+
+

@@ -1,0 +1,19 @@
+<div id="listEvent">
+    <h2>{{ 'homepage.diary.event'|trans }}</h2>
+    {% for event in events %}
+        <div class="homepageEvent">
+            {% if event.picture is not empty %}
+                <div class="imgEvent">
+                    <img style="width: 95%" src="{{ asset('uploads/pictures/events/' ~ event.picture) }}" alt="{{event.picture}}"></img>
+                </div>
+            {% endif %}
+            <div class="eventDetail">
+                <div class="eventDate">{{ 'From'|trans }} {{event.begingAt|date('d/m/Y')}} {{ 'to'|trans }} {{event.endAt|date('d/m/Y')}}</div>
+                <div class="eventName"><b><a href="#">{{ event.name }}</a></b></div>
+                <div class="eventDescription">{{ event.description|length > 200 ? event.description|slice(0, 200) ~ '...' : event.description  }} <a href="#">{{ 'get.more'|trans }}</a></div>
+            </div>
+        </div>
+        {# <br class="clearboth" /> #}
+    {% endfor %}   
+</div>
+    

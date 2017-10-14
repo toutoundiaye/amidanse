@@ -1,26 +1,31 @@
+// version avec la bibliothèque Velocity.js pour les animations
+// voir http://velocityjs.org/
 var slider = document.getElementById("slider");
-var leftPos = 0;
-var currentPicture ;
-var interval;
-function animatePicture()
-{
-	leftPos += 8;
-	currentPicture.style.left = leftPos + "px";
-	if (leftPos >= 600){
-		window.clearInterval(interval);
-        //cette fonction déplace la derniere photo juste avant la premiere, dans le slider
-	    slider.insertBefore(currentPicture, slider.firstChild);
-		currentPicture.style.left = 0;
-		leftPos = 0;
-		window.setTimeout(changePicture, 1000);
-    }
-}	
+var pictures = ["image1.jpeg", "image3.jpeg","image2.jpeg", "image4.jpeg",
+"image5.jpeg", "image7.jpeg","image6.jpeg", "image8.jpeg",
+"image9.jpeg", "image11.jpeg","image10.jpeg", "image12.jpeg",
+"image13.jpeg", "image15.jpeg","image14.jpeg"];
 
-function changePicture()
-{
-	//ceci est l'image visible (le dernier élément dans le slider)
+pictures.forEach(function(filename){
+	var img = document.createElement("img");
+	img.src = "/bundles/app/img/" + filename;
+	slider.appendChild(img);
+});
+
+
+function changePicture(){
 	currentPicture = slider.lastElementChild;
-	interval = window.setInterval(animatePicture, 1);	
+
+	//1er arg : l'élément à animer
+	//2e arg : un objet de propriété css
+	//3e arg : la durée totale de l'animation
+	//4e arg : la fonction de "easing"
+	//5e arg : une fonction qui sera appelée à la fin de l'animation
+	Velocity(currentPicture, {left: 960}, 1000, "easeOutQuad", function(){
+		slider.insertBefore(currentPicture, slider.firstChild);
+		currentPicture.style.left = 0;
+		window.setTimeout(changePicture, 1000);
+	});
 }
 
 window.setTimeout(changePicture, 1000);
