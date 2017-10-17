@@ -13,7 +13,6 @@
                 <div class="eventDescription">{{ event.description|length > 200 ? event.description|slice(0, 200) ~ '...' : event.description  }} <a href="#">{{ 'get.more'|trans }}</a></div>
             </div>
         </div>
-        {# <br class="clearboth" /> #}
     {% endfor %}   
 </div>
     
