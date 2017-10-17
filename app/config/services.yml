@@ -38,3 +38,7 @@ services:
         class: AppBundle\Form\RegistrationType
         tags:
             - { name: form.type, alias: app_user_registration }
+
+    app.lessonsubscriber:
+        class: AppBundle\Domain\LessonSubscriber
+        public: true
