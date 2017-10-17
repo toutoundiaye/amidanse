@@ -1,0 +1,5 @@
+easy_admin:
+    entities:
+        Classroom:
+            class: AppBundle\Entity\Classroom
+            label: app.menu.classroom

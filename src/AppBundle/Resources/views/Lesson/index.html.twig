@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{'Lessons'|trans}}{% endblock %}
+
+{% block content %}
+<h1 style=text-align:center>{{'Here are the list of overcoming lessons'|trans}}</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{'DanceCategory'|trans}}</th>
+        <th>{{'Day'|trans}}</th>
+        <th>{{'Time slot'|trans}}</th>
+        <th>{{'Level'|trans}}</th>
+        <th>{{'Classroom'|trans}}</th>
+        <th>{{'Number of male subcribers'|trans}}</th>
+        <th>{{'Number of female subcribers'|trans}}</th>
+        <th>{{'Free'|trans}}</th>
+      </tr>
+    </thead>
+    {% for lesson in lessons %}
+    <tbody>
+      <tr>
+        <td>{{lesson.danceCategory}}</td>
+        <td>{{lesson.day|date('d/m/Y')}}</td>
+        <td>{{lesson.begingAt|date('H:i')}} - {{lesson.endAt|date('H:i')}}</td>
+        <td>{{lesson.level}}</td>
+        <td>{{lesson.classroom}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>	
+<div>{{etopla}}</div>	
+{% endblock %}

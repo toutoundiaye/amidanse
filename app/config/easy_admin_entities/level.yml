@@ -1,0 +1,5 @@
+easy_admin:
+    entities:
+        Level:
+            class: AppBundle\Entity\Level
+            label: app.menu.level

@@ -1,0 +1,15 @@
+easy_admin:
+    entities:
+        Lesson:
+            class: AppBundle\Entity\Lesson
+            label: app.menu.lesson
+            list:
+                fields:
+                    - { property: 'danceCategory'}
+                    - { property: 'day'}
+                    - { property: 'begingAt'}
+                    - { property: 'endAt'}
+                    - { property: 'trainers'}
+                    - { property: 'referent'}
+                    - { property: 'classroom'}
+                    - { property: 'posts'}
