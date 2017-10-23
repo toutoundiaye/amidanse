@@ -27,7 +27,11 @@ class Level
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
-
+ 
+    public function __toString()
+    {
+        return $this->getName();
+    }
 
     /**
      * Get id

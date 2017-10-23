@@ -1,15 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-10-14T23:15:40Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2017-10-23T15:19:31Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
+      <trans-unit id="958c43ffa14a3577b514cc91ce3fabf492c531ee" resname="Classroom">
+        <source>Classroom</source>
+        <target>Salle</target>
+        <jms:reference-file line="14">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4bc4fd18e50ae6c3341465b41ea0dd1fa215259d" resname="DanceCategory">
+        <source>DanceCategory</source>
+        <target>Cours</target>
+        <jms:reference-file line="10">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="987b9ced08d4ac5d11d286ca4b54b99a4f69164b" resname="Day">
+        <source>Day</source>
+        <target>Date</target>
+        <jms:reference-file line="11">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="75f527181b574f84568f33f67adc3b267a6fef9c" resname="Free">
+        <source>Free</source>
+        <target>Places restantes</target>
+        <jms:reference-file line="17">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="3f66052a107eaf9bae7cad0f61fb462f47ec2c47" resname="From">
         <source>From</source>
         <target>Du</target>
         <jms:reference-file line="11">/../src/AppBundle/Resources/views/Layout/aside.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d1c2027fa4054c6a24fdc88d3d9edf76168d5fa9" resname="Here are the list of overcoming lessons">
+        <source>Here are the list of overcoming lessons</source>
+        <target>Voici la liste des cours à venir</target>
+        <jms:reference-file line="6">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cb9ce97bfc9ad02c7aa89259d4659db3984e26b3" resname="Lessons">
+        <source>Lessons</source>
+        <target>Cours</target>
+        <jms:reference-file line="3">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7c7f5d049fad2569721d446c4a811f9bd5da5393" resname="Level">
+        <source>Level</source>
+        <target>Niveau</target>
+        <jms:reference-file line="13">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1623f7ba760a35db25897314830084dbf892a29d" resname="Number of female subcribers">
+        <source>Number of female subcribers</source>
+        <target>Nombre de femmes inscrites</target>
+        <jms:reference-file line="16">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d2a6bd98531869f17ec124ed7110ac35b773e298" resname="Number of male subcribers">
+        <source>Number of male subcribers</source>
+        <target>Nombre d'hommes inscrits</target>
+        <jms:reference-file line="15">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69fb86a67dc03098fee825333d526b2e3e719fea" resname="Time slot">
+        <source>Time slot</source>
+        <target>Horaire</target>
+        <jms:reference-file line="12">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="25f474c05ed910ead2bc9034165859e9786e4725" resname="connexionPage.message">
         <source>connexionPage.message</source>

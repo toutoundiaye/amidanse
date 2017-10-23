@@ -81,22 +81,6 @@ body {
     padding: 10px;
 }
 
-/*.listDanceStyle a:link,
-a:visited {
-    color: #FFF;
-    text-decoration: none;
-}
-
-.listDanceStyle a:visited {
-    color: #FFF ! important;
-    text-decoration: none;
-}
-
-.listDanceStyle a:hover {
-    color: #d3d3d3;
-    text-decoration: none;
-}*/
-
 .orange {
     background-color: #ffa500;
 }
