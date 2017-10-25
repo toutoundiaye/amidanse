@@ -101,6 +101,22 @@ class Lesson
     */
     private $event;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="numberOfFemaleDancers", type="integer")
+     * 
+     **/
+    private $numberOfFemaleDancers = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="numberOfMaleDancers", type="integer")
+     * 
+     **/
+    private $numberOfMaleDancers = 0;
+
     public function __construct()
     {
         parent::__construct();
@@ -231,7 +247,6 @@ class Lesson
     public function addPost(Comment $post)
     {
         $this->comments->add($post);
-        $post->setLesson($this);
 
         return $this;
     }
@@ -244,7 +259,6 @@ class Lesson
     public function removePost(Comment $post)
     {
         $this->comments->removeElement($post);
-        $post->setLesson(null);
 
         return $this;
     }
@@ -337,7 +351,6 @@ class Lesson
     public function addDancer(User $dancer)
     {
         $this->dancers->add($dancer);
-        $post->setLesson($this);
 
         return $this;
     }
@@ -413,7 +426,7 @@ class Lesson
         return $this;
     }
 
-     /**
+    /**
      * Get event
      *
      * @return string
@@ -436,5 +449,40 @@ class Lesson
 
         return $this;
     }
+
+    /**
+     * Get numberOfFemaleDancers
+     *
+     * @return int
+     */
+    public function getNumberOfFemaleDancers()
+    {
+        $numberOfFemaleDancers = 0;
+        $dancers = $this->getDancers();
+        foreach ($dancers as $dancer) {
+            if ('Woman' === $dancer->getGender()){
+                $numberOfFemaleDancers += 1 ;
+            }
+        }    
+        return $numberOfFemaleDancers;
+    }
+
+    /**
+     * Get numberOfMaleDancers
+     *
+     * @return int
+     */
+    public function getNumberOfMaleDancers()
+    {
+        $numberOfMaleDancers = 0;
+        $dancers = $this->getDancers();
+        foreach ($dancers as $dancer) {
+            if ('Man' === $dancer->getGender()){
+                $numberOfMaleDancers += 1;
+            }
+        }    
+        return $numberOfMaleDancers;
+    }
+
 }
 

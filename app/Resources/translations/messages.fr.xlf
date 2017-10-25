@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-10-23T15:19:31Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2017-10-25T23:55:13Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
+      <trans-unit id="77dfd2135f4db726c47299bb55be26f7f4525a46" resname="Cancel">
+        <source>Cancel</source>
+        <target>Annuler</target>
+        <jms:reference-file line="45">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="958c43ffa14a3577b514cc91ce3fabf492c531ee" resname="Classroom">
         <source>Classroom</source>
         <target>Salle</target>
         <jms:reference-file line="14">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c108205b1b9bceba5a057d41776c3bbfdc0fd66" resname="Classroom : ">
+        <source>Classroom : </source>
+        <target>Salle : </target>
+        <jms:reference-file line="42">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="04a212215ef9fbf686d280802eb81ee7a6e681cd" resname="Confirm">
+        <source>Confirm</source>
+        <target>Confirmer</target>
+        <jms:reference-file line="46">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a33c58f5ec51e3c4c33c216b1b9149b5826c3ad8" resname="Connexion">
+        <source>Connexion</source>
+        <target>Connexion</target>
+        <jms:reference-file line="54">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="4bc4fd18e50ae6c3341465b41ea0dd1fa215259d" resname="DanceCategory">
         <source>DanceCategory</source>
@@ -21,11 +41,6 @@
         <target>Date</target>
         <jms:reference-file line="11">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
       </trans-unit>
-      <trans-unit id="75f527181b574f84568f33f67adc3b267a6fef9c" resname="Free">
-        <source>Free</source>
-        <target>Places restantes</target>
-        <jms:reference-file line="17">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
-      </trans-unit>
       <trans-unit id="3f66052a107eaf9bae7cad0f61fb462f47ec2c47" resname="From">
         <source>From</source>
         <target>Du</target>
@@ -35,6 +50,11 @@
         <source>Here are the list of overcoming lessons</source>
         <target>Voici la liste des cours à venir</target>
         <jms:reference-file line="6">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="17331d380f442e844e2b40cef32075c1c3418bd7" resname="Hi ">
+        <source>Hi </source>
+        <target>Bonjour </target>
+        <jms:reference-file line="38">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="cb9ce97bfc9ad02c7aa89259d4659db3984e26b3" resname="Lessons">
         <source>Lessons</source>
@@ -56,10 +76,30 @@
         <target>Nombre d'hommes inscrits</target>
         <jms:reference-file line="15">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="b233e775d63bb8b86cf031776d4caea613f59cda" resname="Registration">
+        <source>Registration</source>
+        <target>Inscription</target>
+        <jms:reference-file line="53">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3ef006a82d74913dec6e83adb3bd7fa6c4002b6d" resname="RemainingPlaces">
+        <source>RemainingPlaces</source>
+        <target>Places restantes</target>
+        <jms:reference-file line="17">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="99c60a5d1c4b561b9f893365ff8dde26edc1f400" resname="Subscription to lesson">
+        <source>Subscription to lesson</source>
+        <target>Inscription au cours</target>
+        <jms:reference-file line="34">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="69fb86a67dc03098fee825333d526b2e3e719fea" resname="Time slot">
         <source>Time slot</source>
         <target>Horaire</target>
         <jms:reference-file line="12">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="049e8426b82869e89952bc243b4ea7d21b826c27" resname="Would you like to subscribe to lesson :">
+        <source>Would you like to subscribe to lesson :</source>
+        <target>Voulez vous vous inscrire au cours :</target>
+        <jms:reference-file line="39">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="25f474c05ed910ead2bc9034165859e9786e4725" resname="connexionPage.message">
         <source>connexionPage.message</source>
@@ -87,6 +127,11 @@
         <target>Forum</target>
         <jms:reference-file line="9">/../src/AppBundle/Resources/views/Layout/footer.html.twig</jms:reference-file>
         <jms:reference-file line="10">/../src/AppBundle/Resources/views/Layout/navbar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="585af9b23226a08e1bbefe60f85a0144ed8130d0" resname="from ">
+        <source>from </source>
+        <target>de </target>
+        <jms:reference-file line="40">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="3b0268db0347cb9f0353f4843903c5c9ee37277f" resname="get.more">
         <source>get.more</source>
@@ -119,10 +164,26 @@
         <target>Plan du site</target>
         <jms:reference-file line="8">/../src/AppBundle/Resources/views/Layout/footer.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="0ebbeb5b26d935bbca5f929046fcfb7f88ddeff1" resname="referent :">
+        <source>referent :</source>
+        <target>référent :</target>
+        <jms:reference-file line="42">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1d9e0469ee8042271874282839836105f341719" resname="the ">
+        <source>the </source>
+        <target>le </target>
+        <jms:reference-file line="40">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="4374aaee247fb237ce6c97d5c8d64bbe474d16de" resname="to">
         <source>to</source>
         <target>au</target>
         <jms:reference-file line="11">/../src/AppBundle/Resources/views/Layout/aside.html.twig</jms:reference-file>
+        <jms:reference-file line="40">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7e3e267b15f2f2366a120c1cbeb75c22a785aaf6" resname="trainer :">
+        <source>trainer :</source>
+        <target>animateur :</target>
+        <jms:reference-file line="42">/../src/AppBundle/Resources/views/Lesson/index.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="353f1e9e1db92a059508deab73f1befeeb06f98a" resname="whoWeAre">
         <source>whoWeAre</source>

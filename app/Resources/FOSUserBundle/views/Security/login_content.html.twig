@@ -37,6 +37,10 @@
                     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
                 </div>
             </form>
+            <div>
+                <p>{{'New user ? Make your registration'|trans}}</p>
+                <a href="{{ path('fos_user_registration_register')}}" class="btn btn-primary">{{'Register'|trans}}</a>
+            </div>        
         </div>
     </div>
 </div>

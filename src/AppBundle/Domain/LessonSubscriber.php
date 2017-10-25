@@ -4,9 +4,15 @@ namespace AppBundle\Domain;
 
 class LessonSubscriber
 {
-    public function hello($a)
+    public function subscribe()
     {
-    	return print ('bonjour '.$a);
+    	
+    		
     }
 	
 }	
+
+
+// $user = $this->get('security.token_storage')->getToken()->getUser();
+// if (is_granted(IS_AUTHENTICATED_REMEMBERED) || is_granted(IS_AUTHENTICATED_FULLY))
+// return $this->redirectToroute('registration');

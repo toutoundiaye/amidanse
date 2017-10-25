@@ -14,24 +14,62 @@
         <th>{{'Classroom'|trans}}</th>
         <th>{{'Number of male subcribers'|trans}}</th>
         <th>{{'Number of female subcribers'|trans}}</th>
-        <th>{{'Free'|trans}}</th>
+        <th>{{'RemainingPlaces'|trans}}</th>
       </tr>
     </thead>
     {% for lesson in lessons %}
     <tbody>
       <tr>
-        <td>{{lesson.danceCategory}}</td>
+		<td>
+			<div class="bs-example">
+			    <!-- Button HTML (to Trigger Modal) -->
+			    <a href="#{{lesson.id}}" data-toggle="modal">{{lesson.danceCategory}}</a>
+             	<!-- Modal HTML -->
+			    <div id="{{lesson.id}}" class="modal fade">
+			      <div class="modal-dialog">
+			        <div class="modal-content">
+			          <div class="modal-header">
+			            <button type="button" class="close" data-dismiss="modal"
+			              aria-hidden="true">&times;</button>
+			            <h4 class="modal-title">{{'Subscription to lesson'|trans}}</h4>
+			          </div>
+                       {% if (is_granted("IS_AUTHENTICATED_REMEMBERED")) or (is_granted('IS_AUTHENTICATED_FULLY'))%}
+				            <div class="modal-body">
+				            	<p>{{'Hi '|trans}} {{user.name}} {{user.surname}}({{user.email}})</p>
+					            <p>{{'Would you like to subscribe to lesson :'|trans}}</p>
+					            <p>{{lesson.danceCategory}} {{lesson.level|capitalize}} {{'the '|trans}} {{lesson.day|date('d/m/Y')}} {{'from '|trans}} {{lesson.begingAt|date('H:i')}} {{'to'|trans}} 
+					            	{{lesson.endAt|date('H:i')}}</p>
+					            <p>{{'Classroom : '|trans}} {{lesson.classroom}} - {{'referent :'|trans}}  {{lesson.referent|capitalize}} - {{'trainer :'|trans}} </p>   	
+				            </div>
+				            <div class="modal-footer">
+					            <button type="button" class="btn btn-default" data-dismiss="modal">{{'Cancel'|trans}}</button>
+					            <a href="{{path('register_lesson', { 'id': lesson.id })}}" class="btn btn-primary">{{'Confirm'|trans}}</a>
+				            </div>
+                       {% else %}
+                        	<div class="modal-body">
+					            <p>{{'You need to be connected in order to subscribe to lessons'}}</p>
+					        </div>
+					        <div class="modal-footer">
+					            <a href="{{ path('fos_user_registration_register')}}" class="btn btn-primary" data-dismiss="modal">{{'Registration'|trans}}</a>
+					            <a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">{{'Connexion'|trans}}</a>
+							</div>
+			        </div>
+                    {% endif %}    
+                  </div>
+                </div>
+            </div>
+		</td>
         <td>{{lesson.day|date('d/m/Y')}}</td>
         <td>{{lesson.begingAt|date('H:i')}} - {{lesson.endAt|date('H:i')}}</td>
         <td>{{lesson.level}}</td>
         <td>{{lesson.classroom}}</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{lesson.numberOfMaleDancers}}</td>
+        <td>{{lesson.numberOfFemaleDancers}}</td>
+        <td>{{lesson.remainingPlaces}}</td>
       </tr>
     </tbody>
     {% endfor %}
   </table>
 </div>	
-<div>{{etopla}}</div>	
 {% endblock %}
+
