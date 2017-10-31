@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+  {# {%  include  'AppBundle:Lesson:index.html.twig' %} #}
+<div class="lessonsubscription">
+<p>{{'Hi '|trans}} {{dancer.name}}</p>
+<p>{{'You ve subscribe to the following lesson :'|trans}}</p> 
+<p>{{lesson.danceCategory}} {{lesson.level|capitalize}} {{'the '|trans}} {{lesson.day|date('d/m/Y')}} {{'from '|trans}} {{lesson.begingAt|date('H:i')}} {{'to'|trans}} 
+{{lesson.endAt|date('H:i')}}</p>
+<p>{{'Classroom : '|trans}} {{lesson.classroom}} - {{'referent :'|trans}}  {{lesson.referent|capitalize}} - {{'trainer :'|trans}} </p> 
+<p>{{'We re please to see you soon'|trans}}</p>
+<hr>
+<p>Ami'Danse</p>
+<p> 2 Rue du bonheur</p>
+{% endblock %}
