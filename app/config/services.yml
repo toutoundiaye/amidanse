@@ -39,6 +39,10 @@ services:
         tags:
             - { name: form.type, alias: app_user_registration }
 
-    app.lessonsubscriber:
-        class: AppBundle\Domain\LessonSubscriber
+    app.email_sender:
+        class: AppBundle\Domain\EmailSender
         public: true
+        arguments:
+            - '@translator'
+            - '@templating'
+            - '@mailer'

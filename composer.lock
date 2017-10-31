@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "59ef250271bc5bceff011c973df323fc",
+    "content-hash": "0ae04b98fb6fcaa8e7f8c0af6f9bc01a",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3226,6 +3226,49 @@
                 "upload"
             ],
             "time": "2017-07-08T08:10:50+00:00"
+        },
+        {
+            "name": "whiteoctober/swiftmailerdbbundle",
+            "version": "1.1.0",
+            "target-dir": "WhiteOctober/SwiftMailerDBBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/whiteoctober/WhiteOctoberSwiftMailerDBBundle.git",
+                "reference": "23a0e614115e1ff58009691c8201501fdd682e64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/whiteoctober/WhiteOctoberSwiftMailerDBBundle/zipball/23a0e614115e1ff58009691c8201501fdd682e64",
+                "reference": "23a0e614115e1ff58009691c8201501fdd682e64",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/swiftmailer-bundle": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "WhiteOctober\\SwiftMailerDBBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rich Sage",
+                    "email": "rich.sage@gmail.com"
+                }
+            ],
+            "description": "Database spooling for SwiftMailer",
+            "keywords": [
+                "doctrine",
+                "spool",
+                "swiftmailer"
+            ],
+            "time": "2017-05-25T07:51:11+00:00"
         },
         {
             "name": "zendframework/zend-code",

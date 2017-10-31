@@ -1,0 +1,3 @@
+white_october_swift_mailer_db:
+  entity_class: AppBundle\Entity\Email
+  keep_sent_messages: true

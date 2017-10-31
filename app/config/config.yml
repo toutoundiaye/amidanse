@@ -6,6 +6,7 @@ imports:
     - { resource: easy_admin.yml }
     - { resource: vich_uploader.yml }
     - { resource: stof_doctrine_extensions.yml }
+    - { resource: white_october_swift_mailer_db.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -64,7 +65,10 @@ swiftmailer:
     host: '%mailer_host%'
     username: '%mailer_user%'
     password: '%mailer_password%'
-    spool: { type: memory }
+    port:      "%mailer_port%"
+    spool:
+        type: db
+
 
 # FosUser Configuration
 fos_user:
