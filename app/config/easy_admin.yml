@@ -2,6 +2,9 @@ imports:
     - { resource: easy_admin_entities/danceStyle.yml }
     - { resource: easy_admin_entities/danceCategory.yml }
     - { resource: easy_admin_entities/event.yml }
+    - { resource: easy_admin_entities/lesson.yml }
+    - { resource: easy_admin_entities/level.yml }
+    - { resource: easy_admin_entities/classroom.yml }
 
 easy_admin:
     design:

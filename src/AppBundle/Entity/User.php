@@ -253,4 +253,35 @@ class User extends BaseUser
 
         return $this;
     }
+
+    /**
+     * Add lesson
+     *
+     * @param Lesson $lesson
+     */
+    public function addLesson(Lesson $lesson)
+    {
+        // Si l'objet fait déjà partie de la collection on ne l'ajoute pas
+        if (!$this->lessons->contains($lesson)) {
+            if (!$lesson->getDancers()->contains($this)) {
+                $lesson->addDancer($this);  // Lie le cours au danseur.
+            }
+            $this->lessons->add($lesson);
+        }
+    }
+ 
+    public function setLessons(Lesson $lessons)
+    {
+        $this->addLesson($lessons);
+    }
+ 
+    /**
+     * Get ArrayCollection
+     *
+     * @return ArrayCollection $lessons
+     */
+    public function getLessons()
+    {
+        return $this->lessons;
+    }
 }

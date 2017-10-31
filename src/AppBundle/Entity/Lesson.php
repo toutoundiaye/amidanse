@@ -363,8 +363,7 @@ class Lesson
     public function removeDancer(User $dancer)
     {
         $this->dancers->removeElement($dancer);
-        $dancer->setLesson(null);
-
+       
         return $this;
     }
 
@@ -384,7 +383,7 @@ class Lesson
     public function addTrainer(User $trainer)
     {
         $this->trainers->add($trainer);
-        $trainer->setLesson($this);
+        $trainer->setLessons($this);
 
         return $this;
     }
@@ -397,7 +396,7 @@ class Lesson
     public function removeTrainer(User $trainer)
     {
         $this->trainers->removeElement($trainer);
-        $trainer->setLesson(null);
+        $trainer->setLessons(null);
 
         return $this;
     }
