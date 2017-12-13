@@ -1,3 +1,15 @@
 white_october_swift_mailer_db:
-  entity_class: AppBundle\Entity\Email
+  entity_class: MailBundle\Entity\Email
   keep_sent_messages: true
+
+# doctrine:
+#   orm:
+#     auto_generate_proxy_classes: '%kernel.debug%'
+#     entity_managers:
+#       default:
+#         connection: default
+#         auto_mapping: true
+#       mail:
+#         connection: default
+#         mappings:
+#           MailBundle: ~

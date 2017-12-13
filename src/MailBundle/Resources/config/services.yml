@@ -1,0 +1,16 @@
+services:
+#    mail.example:
+#        class: MailBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                connection: default
+            #     auto_mapping: true
+            # mail:
+            #     connection: default
+                mappings:
+                    MailBundle: ~
+

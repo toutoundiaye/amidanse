@@ -1,18 +1,21 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace MailBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 use WhiteOctober\SwiftMailerDBBundle\EmailInterface;
 
 /**
  * Email
  *
  * @ORM\Table(name="email")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\EmailRepository")
+ * @ORM\Entity(repositoryClass="MailBundle\Repository\EmailRepository")
  */
 class Email implements EmailInterface
 {
+    use TimestampableEntity;
     /**
      * @var int
      *
@@ -53,16 +56,9 @@ class Email implements EmailInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="cc", type="text", nullable=true)
+     * @ORM\Column(name="environment", type="text", nullable=true)
      */
-    private $cc;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="bcc", type="text", nullable=true)
-     */
-    private $bcc;
+    private $environment;
 
     /**
      * @var string
@@ -91,28 +87,6 @@ class Email implements EmailInterface
      * @ORM\Column(name="send_date", type="datetime", nullable=true)
      */
     private $sendDate;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=255, nullable=true)
-     */
-    private $type;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="created_at", type="datetime")
-     */
-    private $createdAt;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated_at", type="datetime")
-     */
-    private $updatedAt;
-
 
     /**
      * Get id
@@ -221,54 +195,6 @@ class Email implements EmailInterface
     }
 
     /**
-     * Set cc
-     *
-     * @param string $cc
-     *
-     * @return Email
-     */
-    public function setCc($cc)
-    {
-        $this->cc = $cc;
-
-        return $this;
-    }
-
-    /**
-     * Get cc
-     *
-     * @return string
-     */
-    public function getCc()
-    {
-        return $this->cc;
-    }
-
-    /**
-     * Set bcc
-     *
-     * @param string $bcc
-     *
-     * @return Email
-     */
-    public function setBcc($bcc)
-    {
-        $this->bcc = $bcc;
-
-        return $this;
-    }
-
-    /**
-     * Get bcc
-     *
-     * @return string
-     */
-    public function getBcc()
-    {
-        return $this->bcc;
-    }
-
-    /**
      * Set replyTo
      *
      * @param string $replyTo
@@ -362,78 +288,6 @@ class Email implements EmailInterface
     public function getSendDate()
     {
         return $this->sendDate;
-    }
-
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Email
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set createdAt
-     *
-     * @param \DateTime $createdAt
-     *
-     * @return Email
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * Set updatedAt
-     *
-     * @param \DateTime $updatedAt
-     *
-     * @return Email
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get updatedAt
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
     }
 
     /**
