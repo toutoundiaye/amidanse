@@ -9,6 +9,14 @@ imports:
 easy_admin:
     design:
         brand_color: '#8A0507'
+        menu:
+            - { entity: 'DanceStyle' }
+            - { entity: 'danceCategory' }
+            - { entity: 'Event' }
+            - { entity: 'Lesson' }
+            - { entity: 'Level' }
+            - { entity: 'Classroom' }
+            - { label: 'app.menu.backHome', route: 'homepage' } 
         assets:
             favicon: 'bundles/app/img/favicon.ico'
     site_name: 'Ami''danse'
@@ -16,3 +24,4 @@ easy_admin:
         actions:
             - { name: 'edit', label: '', css_class: 'btn btn-warning', icon: 'edit' }
             - { name: 'delete', label: '', css_class: 'btn btn-danger', icon: 'trash' }
+            

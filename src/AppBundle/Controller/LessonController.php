@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Domain\EmailSender;
 use AppBundle\Entity\Lesson;
+use MailBundle\Entity\Email;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -49,8 +50,8 @@ class LessonController extends Controller
         $em->persist($lesson);
         $em->flush();
         
-       // $sendMail = $this->get('app.email_sender');
-        //$sendMail->sendDancerEmail($dancer, $lesson);
+        $sendMail = $this->get('app.email_sender');
+        $sendMail->sendDancerEmail($dancer, $lesson);
 
         $session = new Session();
 
@@ -77,14 +78,5 @@ class LessonController extends Controller
         return $this->redirectToRoute('list_lessons');
     }
 
-    // public function sendMailAction()
-    // {
-    //     $dancer = $this->get('security.token_storage')->getToken()->getUser();
-    //     $sendMail = $this->get('app.lesson_subscription');
-    //     $sendMail->sendDancerEmail($dancer);
-
-    //     return $this->redirectToRoute('list_lessons');
-            
-    // }
 }
 
