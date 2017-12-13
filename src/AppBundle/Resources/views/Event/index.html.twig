@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{'Diary'|trans}}{% endblock %}
+
+{% block content %}
+	<h1 style=text-align:center>{{'Here are the coming events'|trans}}</h1>
+	{% for event in events %} 
+		<div class="eventlook">
+			<div class="row">
+				<div class="col-sm-4">
+					{% if event.picture is not empty %}
+		                <div class="pictureEvent">
+		                    <img style="width: 60%; margin-left:5px" src="{{ asset('uploads/pictures/events/' ~ event.picture) }}" alt="{{event.picture}}"></img>
+		                </div>
+		            {% endif %}
+		        </div>
+		        <div class="col-sm-8">    
+		            <div class="describeEvent">
+						<h2>{{ event.name }}</h2>
+						<h4>{{ event.begingAt|date('d/m/Y') }} - {{ event.endAt|date('d/m/Y') }}</h4><br />
+						<h4>{{ event.place }}</h4><br />
+						{{ event.description }}
+				    </div>
+				</div>    
+			</div>
+		</div>
+	{% endfor %}	
+{% endblock %}
