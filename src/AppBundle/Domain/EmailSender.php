@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Lesson;
 
+
 class EmailSender
 {
 	/**
@@ -50,6 +51,12 @@ class EmailSender
             ->setBody($body)
             ->setContentType("text/html");
 
+        // if (! $this->get('mailer')->send($message)) {
+           // Il y a eu un problème donc on traite l'erreur
+           //throw new Exception('Le mail n\'a pas pu être envoyé');
+        // }
+
+
         return $this->mailer->send($mail);
     }
 
@@ -62,8 +69,9 @@ class EmailSender
             ['dancer'=> $dancer,
               'lesson'=> $lesson,
             ]);
+        
         $sentMessage = $this->sendMessage($to, $subject, $body);
-
+        
         return 0 !== $sentMessage;
     }
 }	
