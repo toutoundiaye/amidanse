@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{'Dances' | trans}}{% endblock %}
+
+{% block content %}
+	<h1 style=text-align:center>{{'Enjoy yourself and let s dance' | trans}} </h1>
+	<br/>
+		{% for danceStyle in danceStyles %}
+			<button class="accordion">{{ danceStyle.name }}</button>
+			<div class="panel">
+				<p>{{ danceStyle.description }}</p>
+				{% for danceCategorie in danceStyle.danceCategories %}
+					<ul><li><a href="{{path('list_lessons')}}">{{ danceCategorie }}</a></li></ul>
+				{% endfor %}
+				<script src="{{ asset('bundles/app/js/danceStyle.js') }}"></script>
+			</div>		
+		{% endfor %}	
+{% endblock %}
