@@ -181,3 +181,7 @@ button.accordion:after {
 button.accordion.active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
+
+.lessonsubscription {
+    background-color: #FADD17;
+}

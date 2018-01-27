@@ -117,12 +117,18 @@ class Lesson
      **/
     private $numberOfMaleDancers = 0;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Opinion", mappedBy="lesson")
+     */
+    private $opinions;
+
     public function __construct()
     {
         parent::__construct();
         $this->posts = new ArrayCollection();
         $this->dancers = new ArrayCollection();
         $this->trainers = new ArrayCollection();
+        $this->opinions = new ArrayCollection();
     }
 
     /**
@@ -483,5 +489,38 @@ class Lesson
         return $numberOfMaleDancers;
     }
 
+     /**
+     * @return Opinions[]
+     */
+    public function getOpinions()
+    {
+        return $this->opinions;
+    }
+
+    /**
+     * @param $opinion
+     *
+     * @return $this
+     */
+    public function addOpinion(Opinion $opinion)
+    {
+        $this->opinions->add($opinion);
+        $opinion->setOpinions($this);
+
+        return $this;
+    }
+    
+    /**
+     * @param $opinion
+     *
+     * @return $this
+     */
+    public function removeOpinion(Opinion $opinion)
+    {
+        $this->opinions->removeElement($opinion);
+        $opinion->setOpinions(null);
+
+        return $this;
+    }
 }
 
